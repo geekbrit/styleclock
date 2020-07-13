@@ -4,7 +4,7 @@ This is an HTML / CSS / Javasript feature clock including moon phase, weather in
 
 This clock was originally created as a desktop clock widget, using the Chrome plugin Flobro to float the page in a borderless resizeable window.
 
-![screenshot]{screenshot.png}
+![screenshot](screenshot.png)
 
 ## Getting Started
 
@@ -36,4 +36,4 @@ With thanks to authors of the following resources
 * The moon phase calculation is derived from [endel/getMoonPhase.js](https://gist.github.com/endel/dfe6bb2fbe679781948c)
 * The weather icons come from [ HerzScheisse /
 org.openhab.ui.iconset.climacons ](https://github.com/HerzScheisse/org.openhab.ui.iconset.climacons)
-* etc
+
