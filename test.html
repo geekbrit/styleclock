@@ -1,0 +1,66 @@
+<!--
+ *
+ *  Feature clock html structure
+ *  Peter Maloy
+ *  MIT Licensed July 2020
+ *
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PJM Clock</title>
+  <link rel='stylesheet' media='all' href='/styleclock/clock.css'></link>
+
+  <style>
+    body {
+        background: linear-gradient(120deg, rgba(200,215,220,1) 0%,rgba(227,234,237,1) 63%,rgba(242,245,246,1) 100%);
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+    <div class='clockface' style='--size:50vmin; position:absolute; top:5vmin; right:5vmin;'>
+        <img src='roman.svg' class='numerals'>
+        <div class='moonphase'></div>
+
+        <img class='weathericon'/>
+        <span class='mph'></span>
+        <img class='windicon' src='/styleclock/icons/arrow.png'>
+        <span class='temperature'></span>
+        <span class='calendar'></span>
+
+        <div class='hand hour shadow'></div>
+        <div class='hand minute shadow'></div>
+        <div class='hand second shadow'></div>
+
+        <div class='hand hour'></div>
+        <div class='hand minute'></div>
+        <div class='hand second'></div>
+
+        <div class='bobble'></div>
+        <div class='glass'></div>
+    </div>
+</body>
+</html>
+
+<!--
+//
+// Alternative date libraries, moment.js (full-featured, largish)
+//
+//<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js'></script>
+-->
+
+<!--
+//
+// Or DayJS - nice and compact
+//
+-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.29/dayjs.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.29/plugin/advancedFormat.min.js'></script>
+
+<script src='/styleclock/clock.js'></script>
+

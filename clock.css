@@ -1,0 +1,176 @@
+.clockface {
+    --size: 80vmin;
+    position: relative;
+    border-radius: 50%;
+    width:  var(--size);
+    min-height: var(--size);
+    box-shadow: inset -9px 10px 23px -6px rgba(0,0,0,0.75), -9px 10px 23px -6px rgba(0,0,0,0.75);
+    background: radial-gradient(ellipse at center, rgba(254,252,234,1) 0%,rgba(254,252,234,1) 59%,rgba(241,218,54,1) 100%);
+}
+.clockface::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    border-radius: inherit;
+    margin: calc(var(--size) / -80);
+    background: linear-gradient(45deg, red, orange);
+}
+
+
+.bobble {
+    --bobblesize: calc(var(--size) / 25);
+    --bobbleoffset: calc(var(--size) - var(--bobblesize));
+    --bobbleoffset2: calc(var(--bobbleoffset) / 2);
+    position: absolute;
+    border-radius: 50%;
+    width: var(--bobblesize);
+    height: var(--bobblesize);
+    transform: translateX(var(--bobbleoffset2)) translateY(var(--bobbleoffset2));
+    background: radial-gradient(ellipse at 60% 40%, rgba(255,255,255,1) 0%, rgba(146,146,146,1) 67%, rgba(00,00,00,1) 100%);
+}
+
+.moonphase {
+    --moonsize: calc(var(--size) / 8);
+    --moonXoffset: calc(var(--size) - var(--moonsize));
+    --moonXoffset2: calc(var(--moonXoffset) / 2);
+    --moonYoffset: calc(var(--size) / 5.33);
+    position: absolute;
+    width: var(--moonsize);
+    height: var(--moonsize);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(var(--moonXoffset2)) translateY(var(--moonYoffset));
+    opacity: 0.6;
+}
+
+.temperature {
+    --tempsize: calc(var(--size) / 8);
+    --tempXoffset: calc(var(--size) - var(--tempsize));
+    --tempXoffset2: calc(var(--tempXoffset) / 2);
+    --tempYoffset: calc(var(--size) * 0.75);
+    position: absolute;
+    width: var(--tempsize);
+    height: var(--tempsize);
+    opacity: 0.8;
+    text-align: center;
+    font-size: calc(var(--size) / 13.33);
+    color: #444;
+    transform: translateX( var(--tempXoffset2)  ) translateY( var(--tempYoffset) );
+}
+
+.calendar {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    text-shadow: -1px 1px 2px rgba(0,0,0,0.25);
+    font-size: calc( var(--size) / 11);
+    transform: translateY( calc( var(--size) / 1.77) );
+}
+
+.weathericon {
+    --iconsize: calc(var(--size) / 8);
+    --iconXoffset: calc(var(--size) / 5.33);
+    --iconYoffset: calc(var(--size) / 2.286);
+    position: absolute;
+    width: var(--iconsize);
+    height: var(--iconsize);
+    opacity: 0.6;
+    transform: translateX( var(--iconXoffset)  ) translateY( var(--iconYoffset) );
+}
+
+.windicon{
+    --iconsize: calc(var(--size) / 8);
+    --iconXoffset: calc(var(--size) * 0.62);
+    --iconYoffset: calc(var(--size) * 0.425);
+    position:absolute;
+    width: var(--iconsize);
+    height: var(--iconsize);
+    opacity: 0.8;
+    transform: translateX( var(--iconXoffset)  ) translateY( var(--iconYoffset) );
+}
+
+.mph {
+    --iconXsize: calc(var(--size) / 8);
+    --iconYsize: calc(var(--size) * 0.075);
+    --iconXoffset: calc(var(--size) * 0.725);
+    --iconYoffset: calc(var(--size) * 0.45);
+    position: absolute;
+    display: inline-block;
+    color: #444;
+    width: var(--iconXsize);
+    height: var(--iconYsize);
+    font-size: calc(var(--size) * 0.075);
+    text-align: center;
+    opacity: 0.8;
+    transform: translateX( var(--iconXoffset)  ) translateY( var(--iconYoffset) );
+}
+
+.hour {
+    --handwidth: calc(var(--size) * 0.025);
+    --handheight: calc(var(--size) * 0.375);
+    background: rgba(255,0,0,1.0);
+    border: solid 1px black;
+}
+
+
+.minute {
+    --handwidth: calc(var(--size) * 0.02);
+    --handheight: calc(var(--size) * 0.475);
+    background: rgba(0,0,0,1.0);
+}
+
+
+.second {
+    --handwidth: calc(var(--size) * 0.01);
+    --handheight: calc(var(--size) * 0.4875);
+    background: rgba(255,255,255,1.0);
+    border: solid 1px black;
+}
+
+
+.hand {
+    --handXoffset:  calc(var(--size) - var(--handwidth));
+    --handXoffset2: calc(var(--handXoffset) / 2);
+    --handYoffset:  calc(var(--size) * 0.5);
+    --handheight90: calc(var(--handheight) * 0.9);
+    --handYoffset2: calc(var(--handYoffset) - var(--handheight90));
+    position: absolute;
+    width: var(--handwidth);
+    min-height: var(--handheight);
+    transform-origin: 50% 90%;
+    transform: translateX( var(--handXoffset2)  ) translateY( var(--handYoffset2) );
+}
+
+.shadow {
+    --shadowX: calc(var(--handXoffset2) - calc(var(--size) * 0.0125));
+    --shadowY: calc(var(--handYoffset2) + calc(var(--size) * 0.0125));
+    --blur:    calc(var(--size) * 0.0025);
+    background: rgba(80,80,80,0.5);
+    transform: translateX( var(--shadowX)  ) translateY( var(--shadowY) );
+    filter: blur(var(--blur));
+    border: none;
+}
+
+
+.numerals {
+    --dialsize:   calc(var(--size) * 0.925);
+    --dialoffset: calc(var(--size) * 0.0375);
+    position: absolute;
+    width:  var(--dialsize);
+    height: var(--dialsize);
+    left:   var(--dialoffset);
+    top:    var(--dialoffset);
+    opacity: 0.8;
+}
+
+.glass {
+    position:absolute;
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(ellipse at 10% 80%, rgba(255,210,0,0.3) 0%,rgba(255,255,255,0) 50%),
+                radial-gradient(ellipse at 70% 35%, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0) 30%);
+    border-radius: 50%;
+}
+
