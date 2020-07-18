@@ -149,7 +149,7 @@ function moonphase(){
     jd /= 29.5305882;   // divide elapsed days by moon cycle
     const phase = Math.round(jd * 8) % 8;
 
-    document.getElementsByClassName('moonphase')[0].style.backgroundImage = 'url("/styleclock/phase'+phase+'.png")';
+    document.getElementsByClassName('moonphase')[0].style.backgroundImage = 'url("/styleclock/phases/phase'+phase+'.png")';
 }
 
 
